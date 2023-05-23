@@ -5,5 +5,15 @@
     </head>
     <body>
         <h3>Dealership</h3>
+        <div th:if="${budget >= 5000}">
+            <div th:switch="${make}">
+                <p th:case="Toyota">Toyota Corolla: $5,000</p>
+                <p th:case="Honda">Honda Civic: $8,000</p>
+                <p th:case="Ford">Ford Fusion: $10,000</p>
+                <p th:case="default">Better luck next time!</p>
+            </div>
+        </div>
+        <div th:unless="${budget >= 5000}">
+            <p>Sorry, you don't have enough money to buy a car.</p>
     </body>
 </html>

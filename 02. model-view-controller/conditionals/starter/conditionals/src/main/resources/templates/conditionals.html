@@ -4,6 +4,13 @@
         <title>Conditionals</title>
     </head>
     <body>
-                
+            <p th:text="${sales > 50} ? 'Sales are good!' : 'Sales are bad:::'"></p>
+            <div th:switch="${product}">
+                <p th:case="'Mobile'">Mobile</p>
+                <p th:case="'Laptop'">Laptop</p>
+                <p th:case="'TV'">TV</p>
+                <p th:case="'table'">Table - 50</p>
+                <p th:case="*">Other</p>
+            </div>
     </body>
 </html>
